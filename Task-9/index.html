@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> 
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>To Do List</title>
+    <title>Todo list</title>
     <link
       href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
       rel="stylesheet"
@@ -35,19 +35,23 @@
 
     <div class="todo-list" data-list-display-container>
       <div class="todo-header">
-        <h2 class="list-title" data-list-title>YouTube</h2>
-        <p class="task-count" data-list-count>3 tasks remaining</p>
+        <h2 class="list-title" data-list-title>Task</h2>
+        <p class="task-count" data-list-count>Tasks Remaining</p>
       </div>
 
       <div class="todo-body">
         <div class="tasks" data-tasks></div>
 
         <div class="new-task-creator">
-            <form action="" data-new-task-form id="inputs">
-                <input type="text" data-new-task-input id="newtask" class="new task" placeholder="new task name"/>
-                <input type="text" data-task-description-input id="description" class="new task" placeholder="Add Task Description" />
-                <input type="date" data-deadline-input id="deadline" class="new task"/>
-                <button class="btn create" type="submit" create new task onclick="createArray()">+</button>
+            <form action="" data-new-task-form>
+                <input 
+                  type="text"
+                  data-new-task-input
+                  class="new task"
+                  placeholder="new task name"
+                  aria-label="new task name"
+                />
+                <button class="btn create" aria-label="create new task">+</button>
               </form>
         </div>
 
@@ -66,7 +70,6 @@
         <label>
           <span class="custom-checkbox"></span>
         </label>
-        <button class="view-details" onclick="viewDetails()"><i class="fa fa-angle-down"></i></button>
       </div>
     </template>
   </body>
