@@ -16,28 +16,12 @@ const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 
-var taskArr = [];
-var descArr = [];
-var dateArr = [];
-
-var newTask = document.getElementById("newtask").value;
-var desc = document.getElementById("description").value;
-var date = document.getElementById("deadline").value;  
-
 listsContainer.addEventListener('click', e => {
   if (e.target.tagName.toLowerCase() === 'li') {
     selectedListId = e.target.dataset.listId
     saveAndRender()
   }
 })
-
-const form = document.getElementById('inputs');
-
-form.addEventListener('submit', function handleSubmit(event) {
-  event.preventDefault();
-
-  form.reset();
-});
 
 tasksContainer.addEventListener('click', e => {
   if (e.target.tagName.toLowerCase() === 'input') {
@@ -81,21 +65,6 @@ newTaskForm.addEventListener('submit', e => {
   selectedList.tasks.push(task)
   saveAndRender()
 })
-
-function createArray(taskname, description, deadline){
-  taskArr.push(taskname);
-  descArr.push(description);
-  dateArr.push(deadline);
-  saveAndRender()
-}
-
-function viewDetails(){ 
-  for (var i = 0; i < newTask.length; i++) {
-    var a = input[i];
-    console.log("Description : " + descArr[i]);
-    console.log("Deadline : " + dateArr[i]);
-    }
-  }
 
 function createList(name) {
   return { id: Date.now().toString(), name: name, tasks: [] }
